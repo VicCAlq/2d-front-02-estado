@@ -1,6 +1,6 @@
 import Placar from './components/Placar';
 import InputTexto from './components/InputTexto';
-
+import AtvCumprimenta from './components/AtvCumprimenta'
 const styles = {
   container: {
     flex: 1,
@@ -17,6 +17,7 @@ export default function App() {
   return (
     <div style={styles.container}>
       <Placar/>
+        <AtvCumprimenta></AtvCumprimenta>
       <InputTexto/>
     </div>
   );
