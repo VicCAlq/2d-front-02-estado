@@ -1,5 +1,6 @@
 import Placar from './components/Placar';
 import InputTexto from './components/InputTexto';
+import AtvDobra from './components/AtvDobra';
 
 const styles = {
   container: {
@@ -16,6 +17,7 @@ const styles = {
 export default function App() {
   return (
     <div style={styles.container}>
+      <AtvDobra numero={6}/>
       <Placar/>
       <InputTexto/>
     </div>

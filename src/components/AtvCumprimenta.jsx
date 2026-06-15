@@ -19,3 +19,70 @@ _________________________________
 | É um prazer lhe conhecer...   |
 |_______________________________|
 */
+
+import { useState } from 'react'
+
+// Estilos de "CSS"
+const estilo = {
+  view: {
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: "10px",
+    backgroundColor: "#303540",
+    padding: "10px",
+    margin: "10px",
+    gap: "10px",
+  },
+  texto: {
+    color: "#eee",
+    fontSize: "32px",
+  },
+  textoBotao: {
+    color: "#eee",
+    fontSize: "16px",
+  },
+  botao: {
+    borderRadius: "5px",
+    backgroundColor: "#505560",
+    padding: "10px",
+    margin: "10px",
+  },
+  viewBotoes: {
+    display: "flex",
+    flexDirection: "row",
+    flex: "1 0",
+    width: "100%",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  input: {
+    borderRadius: "5px",
+    backgroundColor: "#bbb",
+    padding: "4px",
+  }
+}
+
+export default function AtvCumprimenta() {
+  const [imputInserido, setImputInserido] = useState("")
+  const [nome,setNome]= useState("...")
+  return(
+    <div style={estilo.view}>
+      <p style={estilo.texto}>
+         Olá, qual seu nome?
+      </p>
+      <input
+        type="text"
+        value={imputInserido}
+        style={estilo.input}
+        onChange={(e) => setImputInserido(e.target.value)}
+        placeholder="Digite aqui o seu nome"
+      />
+      <button style={estilo.botao} onClick={() => setNome(imputInserido)}>
+        <p style={estilo.textoBotao}>Salvar nome</p>
+      </button>
+      <p style={estilo.texto}>
+        É um prazer lhe conhecer {nome}
+      </p>
+    </div>
+  )
+}

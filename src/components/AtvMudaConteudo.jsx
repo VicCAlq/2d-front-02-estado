@@ -8,3 +8,23 @@ Ao clicar no segundo <button>, o conteúdo dessa <div> deve ser substituído por
 onde cada uma destas <divs> deve ter o tamanho de 200px de altura por 200px de largura, 
 a da esquerda deve ter a cor "purple", a do meio a cor "teal" e a da direita a cor "orange".
 */
+import { useState } from 'react'
+
+export default function AtvDobra() {
+const [x, setX] = useState()
+
+
+
+ return(
+    <div style={estilo.view}>
+         <p style={estilo.texto}>
+         
+         </p>
+      <div style={estilo.viewBotoes}>
+         <button style={estilo.botao} onClick={() => x()}>
+           <p style={estilo.textoBotao}> </p>
+         </button>
+      </div>
+ </div>
+ )
+}
