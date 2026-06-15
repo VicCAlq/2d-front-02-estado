@@ -19,3 +19,43 @@ _________________________________
 | É um prazer lhe conhecer...   |
 |_______________________________|
 */
+
+
+import { useState } from 'react';
+import root from '../styles/main';
+const estilo = {
+  botao: {
+    fontSize:"10px",
+    borderRadius: "50px",
+    padding: root.spacings.paddingM,
+    backgroundColor: "red",
+
+  },
+  texto: {
+    color: root.colors.texto,
+    fontSize: "16px",
+  },
+  inputo: {
+    marginLeft: "25px",
+  }
+}
+
+
+export default function App() {
+  const [nome, SetFemboy] = useState('');
+
+  return (
+    <div style={{ padding: 20 }}>
+      <p>qual o seu nome:</p>
+      <input
+        placeholder="Seu nome aqui"
+        value={femboy}
+        onChangeText={SetFemboy} // Atualiza o estado a cada letra digitada
+        style={{ borderWidth: 1, padding: 10, marginTop: 10 }}
+      />
+      <p style={{ marginTop: 20 }}>
+        prazer em lhe conhecer, {femboy || '...'}!
+      </p>
+    </div>
+  );
+}
