@@ -8,52 +8,52 @@ e substituir o conteúdo anterior dessa <div> de baixo dos botões.
 O texto digitado no <input> ativado por um <button> deve ser exibido no <p> do outro <button>, e vice-versa.
 */
 
-// import { useState } from 'react'
+import { useState } from 'react';
 
-// const estilo = {
-//   view: {
-//     alignItems: "center",
-//     justifyContent: "center",
-//     borderRadius: "10px",
-//     backgroundColor: "#303540",
-//     padding: "10px",
-//     margin: "10px",
-//     gap: "10px",
-//   },
-//   texto: {
-//     color: "#eee",
-//     fontSize: "32px",
-//   },
-//   textoBotao: {
-//     color: "#eee",
-//     fontSize: "16px",
-//   },
-//   botao: {
-//     borderRadius: "5px",
-//     backgroundColor: "#505560",
-//     padding: "10px",
-//     margin: "10px",
-//   },
-//   viewBotoes: {
-//     display: "flex",
-//     flexDirection: "row",
-//     flex: "1 0",
-//     width: "100%",
-//     justifyContent: "space-between",
-//     alignItems: "center",
-//   },
-//   input: {
-//     borderRadius: "5px",
-//     backgroundColor: "#bbb",
-//     padding: "4px",
-//   }
-// }
+const estilo = {
+  view: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 10,
+    backgroundColor: '#303540',
+    padding: 10,
+    margin: 10,
+    gap: 10,
+  },
+  texto: {
+    color: '#eee',
+    fontSize: 32,
+  },
+  textoBotao: {
+    color: '#eee',
+    fontSize: 16,
+  },
+  botao: {
+    borderRadius: 5,
+    backgroundColor: '#505560',
+    padding: 10,
+    margin: 10,
+  },
+  viewBotoes: {
+    flexDirection: 'row',
+    width: '100%',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  input: {
+    borderRadius: 5,
+    backgroundColor: '#bbb',
+    padding: 4,
+  }
+};
 
-// export default function AtvTelefoneSemFio(){
-
-//     const[] 
-
-//     return(
-
-//     )
-// }
+export default function AtvTelefoneSemFio() {
+  const [telefone, setTelefone] = useState();
+  
+  return (
+    <div>
+        <button></button>
+        <button></button>
+    </div>
+  );
+}
