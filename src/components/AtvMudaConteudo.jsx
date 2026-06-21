@@ -17,4 +17,46 @@ const [tela, setTela] = useState(1)
 
 return (
     
+<div>
+    <>
+    <button onClick={() => setTela(0)}>Página</button>
+        <button onClick={() => setTela(1)}>Cores</button>
+        </>
+    
+{tela === 0 ? (
+<div>
+<p>Página em construção</p>
+</div>
 )
+: (
+    <div style={{ display: "flex", gap: "10px" }}>
+            <div
+              style={{
+                width: "200px",
+                height: "200px",
+                backgroundColor: "purple",
+              }}
+            ></div>
+
+            <div
+            style={{
+            width: "200px",
+             height: "200px",
+             backgroundColor: "teal",
+            }}
+            ></div>
+
+             <div
+            style={{
+                width: "200px",
+                 height: "200px",
+                 backgroundColor: "orange",
+            }}
+            ></div>
+</div>
+)
+
+}
+</div>
+)
+}
