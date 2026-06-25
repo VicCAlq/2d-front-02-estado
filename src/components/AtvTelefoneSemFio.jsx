@@ -49,36 +49,43 @@ const estilo = {
   }
 }
 
-
 export default function AtvTelefoneSemFio() {
+  // Criação das variáveis que armazenam o texto digitado, e o texto salvo
+  const [ativo, setAtivo] = useState(1)
   const [textoInserido, setTextoInserido] = useState("")
-  const [texto, setTexto] = useState("Quem é este Pokemon?")
-
+  const [texto1, setTexto1] = useState("")
+  const [texto2, setTexto2] = useState("")
   // Parte visual do componente
   return(
     <div style={estilo.view}>
-      <p style={estilo.texto}>
-        {texto}
-      </p>
-     <div> 
 
-        <button style={estilo.botao} onClick={() => setTexto(textoInserido)}>
-        <p style={estilo.textoBotao}>Salvar texto</p>
-        </button></div> 
+      <div style={estilo.viewBotoes}>
 
-        <button style={estilo.botao} onClick={() => setTexto(textoInserido)}>
-        <p style={estilo.textoBotao}>Salvar texto</p>
-        </button>
+      <button style={estilo.botao} onClick={() => {
+        setAtivo(1) 
+        setTexto1(textoInserido)
+        setTextoInserido("")
+        }}>
 
-
-        <input
-        type="text"
-        value={textoInserido}
-        style={estilo.input}
-        onChange={(e) => setTextoInserido(e.target.value)}
-        placeholder="Digite aqui o novo texto"
-      />
+        <p style={estilo.textoBotao}>Botão 1</p>
+      </button>
       
+      <button style={estilo.botao} onClick={() => {
+        setAtivo(2)
+        setTexto2(textoInserido)
+        setTextoInserido("")
+        }}>
+
+        <p style={estilo.textoBotao}>Botão 2</p>
+      </button>
+
+      </div>
+
+      <div>
+  {ativo === 1 ? (
+    <>
+      <p style={estilo.texto}>{texto2}</p>
+
       <input
         type="text"
         value={textoInserido}
@@ -86,8 +93,24 @@ export default function AtvTelefoneSemFio() {
         onChange={(e) => setTextoInserido(e.target.value)}
         placeholder="Digite aqui o novo texto"
       />
-      
+    </>
+  ) : (
+    <>
+      <p style={estilo.texto}>{texto1}</p>
+
+      <input
+        type="text"
+        value={textoInserido}
+        style={estilo.input}
+        onChange={(e) => setTextoInserido(e.target.value)}
+        placeholder="Digite aqui o novo texto"
+      />
+    </>
+  )}
+</div>
+
     </div>
   )
 }
+
 
