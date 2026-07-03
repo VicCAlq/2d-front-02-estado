@@ -19,40 +19,31 @@ _________________________________
 | É um prazer lhe conhecer...   |
 |_______________________________|
 */
-
-import React, { useState } from 'react';
+import { useState } from "react";
 
 export default function AtvCumprimenta() {
-  // Estado 1: Armazena o texto que o usuário está digitando linha por linha
-  const [nomeInput, setNomeInput] = useState('');
+  const [nome, setNome] = useState("");
+  const [mostrarMensagem, setMostrarMensagem] = useState(false);
 
-  // Estado 2: Armazena o nome definitivo que só será exibido após clicar no botão
-  const [nomeExibido, setNomeExibido] = useState('');
-
-  // Função disparada ao clicar no botão
-  const lidarComClique = () => {
-    setNomeExibido(nomeInput);
-  };
+  function handleClick() {
+    setMostrarMensagem(true);
+  }
 
   return (
     <div>
       <p>Olá, qual seu nome?</p>
-      
-      {/* O valor do input é espelhado no estado nomeInput */}
-      <input 
-        type="text" 
-        placeholder="Nome aqui" 
-        value={nomeInput}
-        onChange={(e) => setNomeInput(e.target.value)} 
-      />
-      
-      <button onClick={lidarComClique}>
-        Salvar
-      </button>
 
-      {/* Condicional: O parágrafo só renderiza na tela se nomeExibido não estiver vazio */}
-      {nomeExibido && (
-        <p>É um prazer lhe conhecer, {nomeExibido}</p>
+      <input
+        type="text"
+        placeholder="Nome aqui"
+        value={nome}
+        onChange={(e) => setNome(e.target.value)}
+      />
+
+      <button onClick={handleClick}>Salvar</button>
+
+      {mostrarMensagem && (
+        <p>É um prazer lhe conhecer, {nome}</p>
       )}
     </div>
   );
