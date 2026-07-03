@@ -8,3 +8,15 @@ Ao clicar no segundo <button>, o conteúdo dessa <div> deve ser substituído por
 onde cada uma destas <divs> deve ter o tamanho de 200px de altura por 200px de largura, 
 a da esquerda deve ter a cor "purple", a do meio a cor "teal" e a da direita a cor "orange".
 */
+import { useState } from "react"
+
+export default function AtvDobra({numero}){
+    const [valor, setValor] = useState(numero)
+    function Dobra(){setValor(valor*2)}    
+    return(
+        <div>
+            <p>{valor}</p>
+            <button onClick={() => Dobra()}>Dobra aqui</button>
+        </div>
+    )
+}
