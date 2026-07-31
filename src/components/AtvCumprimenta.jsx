@@ -19,3 +19,20 @@ _________________________________
 | É um prazer lhe conhecer...   |
 |_______________________________|
 */
+import {useState} from 'react'
+
+function AtvCumprimenta() {
+
+    const [nome, setNome] = useState("");
+
+    return(
+
+        <div>
+            <p>Olá, qual seu nome?</p>
+        </div>
+    );
+
+   
+}
+
+export default AtvCumprimenta
