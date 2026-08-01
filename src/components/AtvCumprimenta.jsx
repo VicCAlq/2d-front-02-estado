@@ -25,10 +25,24 @@ function AtvCumprimenta() {
 
     const [nome, setNome] = useState("");
 
+    const [clicado, setClicado] = useState(false);
+
+
     return(
 
         <div>
             <p>Olá, qual seu nome?</p>
+
+            <input value={nome} onChange={(e) => setNome(e.target.value)} />
+
+            <button onClick={() => setClicado(true)}>
+                Salvar
+            </button>
+
+            {clicado && (
+                <p>É um prazer lhe conhecer, {nome}</p>
+            )}
+
         </div>
     );
 
