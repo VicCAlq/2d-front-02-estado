@@ -10,13 +10,26 @@ a da esquerda deve ter a cor "purple", a do meio a cor "teal" e a da direita a c
 */
 import { useState } from "react"
 
-export default function AtvDobra({numero}){
-    const [valor, setValor] = useState(numero)
-    function Dobra(){setValor(valor*2)}    
+const style = {
+    primeiraDiv: {backgroundColor: "purple"},
+    segundaDiv: {backgroundColor: "teal"},
+    terceiraDiv: {backgroundColor: "orange"},
+}
+export default function AtvMudaConteudo() {
+    const pagina1 = <div><p>Página em construção</p></div>;
+    const pagina2 = <div>
+                        <div style={style.primeiraDiv}></div>
+                        <div style={style.segundaDiv}></div>
+                        <div style={style.terceiraDiv}></div>
+                    </div>
+
+const [paginaAtual, setPaginaAtual] = useState(pagina1)
+
     return(
         <div>
-            <p>{valor}</p>
-            <button onClick={() => Dobra()}>Dobra aqui</button>
+            <button onClick={() => setPaginaAtual(pagina1)}> Botão 1 </button> 
+            <button onClick={() => setPaginaAtual(pagina2)}> Botao 2</button>
+            {paginaAtual}                
         </div>
     )
 }
