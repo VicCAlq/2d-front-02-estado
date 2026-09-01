@@ -19,3 +19,42 @@ _________________________________
 | É um prazer lhe conhecer...   |
 |_______________________________|
 */
+
+mport React, { useState } from 'react';
+
+function AtvCumprimenta() {
+ 
+  const [textoInput, setTextoInput] = useState('');
+  
+
+  const [nomeConfirmado, setNomeConfirmado] = useState('');
+
+  
+  const lidarComClique = () => {
+    setNomeConfirmado(textoInput);
+  };
+
+  return (
+    <div>
+      <p>Olá, qual seu nome?</p>
+      
+      <input 
+        type="text" 
+        placeholder="Nome aqui" 
+        value={textoInput}
+        onChange={(e) => setTextoInput(e.target.value)} 
+      />
+      
+      <button onClick={lidarComClique}>
+        Salvar
+      </button>
+
+      {/* Renderização condicional: O <p> abaixo só aparece se o nomeConfirmado não estiver vazio */}
+      {nomeConfirmado && (
+        <p>É um prazer lhe conhecer, {nomeConfirmado}</p>
+      )}
+    </div>
+  );
+}
+
+export default AtvCumprimenta;
