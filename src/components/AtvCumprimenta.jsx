@@ -57,26 +57,31 @@ const estilo = {
     fontSize: "16px",
   },
   inputo: {
-    marginLeft: "25px",
+    marginRight: "15px",
   }
 }
 
 
-export default function App() {
-  const [nomeLegal, SetnomeLegal] = useState('');
-
+export default function AtvCumprimenta() {
+  const [nomeLegalInserido, setNomeLegalInserido] = useState("");
+  const [nomeLegal, SetnomeLegal] = useState("Seu nome aqui")
   return (
     <div style={{ padding: 20 }}>
-      <p>qual o seu nome:</p>
+      <p>Qual o seu nome:</p>
       <input
         placeholder="Seu nome aqui"
-        value={nomeLegal}
-        onChangeText={SetnomeLegal} // Atualiza o estado a cada letra digitada
-        style={{ borderWidth: 1, padding: 10, marginTop: 10 }}
+        value={nomeLegalInserido}
+        onChange={(e) => setNomeLegalInserido(e.target.value)}
+        style={estilo.inputo}
+        type="text"
       />
+      <button style={estilo.botao} onClick={() => SetnomeLegal(nomeLegalInserido)}>
+        <p style={estilo.textoBotao}>Salvar nome </p>
+      </button>
       <p style={{ marginTop: 20 }}>
-        prazer em lhe conhecer, {nomeLegal || '...'}!
+        Prazer em lhe conhecer, {nomeLegal || '...'}!
       </p>
+
     </div>
   );
 }

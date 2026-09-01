@@ -62,6 +62,7 @@ export default function InputTexto() {
       <button style={estilo.botao} onClick={() => setTexto(textoInserido)}>
         <p style={estilo.textoBotao}>Salvar texto</p>
       </button>
+      
     </div>
   )
 }
